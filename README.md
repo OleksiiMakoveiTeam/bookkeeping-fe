@@ -58,23 +58,3 @@ This frontend connects to the backend via **RTK Query**.
 ```ts
 const { data: bots, isLoading } = useGetBotsQuery()
 ```
-
-🎨 UI Components & Pages
-
-1️⃣ Pages
-
-```
-Page	Path	Description
-Dashboard	/	Displays all bots
-Bot Details	/bot/:id	Shows tasks assigned to a bot
-```
-
-2️⃣ Components
-
-```
-Component Description
-BotList Displays all bots in a grid
-BotCard A single bot UI with delete functionality
-TaskCard A single task UI with real-time updates
-BotModal Modal for creating a new bot
-```
