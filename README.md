@@ -6,6 +6,8 @@ This is the frontend for the Bookkeeping Automation project. It provides a **Rea
 
 ---
 
+I have primarily focused on functionality due to the absence of a design but have incorporated some basic UI components to ensure usability.
+
 ## 🛠️ Tech Stack
 
 - **React** - UI Framework
