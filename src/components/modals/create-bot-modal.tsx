@@ -7,9 +7,9 @@ import {
   IconButton
 } from "@mui/material"
 import CloseIcon from "@mui/icons-material/Close"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { z } from "zod"
+import {useForm} from "react-hook-form"
+import {zodResolver} from "@hookform/resolvers/zod"
+import {z} from "zod"
 
 const botSchema = z.object({
   name: z.string().min(3, "Bot name must be at least 3 characters long")
@@ -31,7 +31,7 @@ export const CreateBotModal = ({
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: {errors},
     reset
   } = useForm<BotFormValues>({
     resolver: zodResolver(botSchema)
@@ -46,6 +46,7 @@ export const CreateBotModal = ({
   return (
     <Modal open={open} onClose={onClose}>
       <Box
+        data-testid="test-createBotModal"
         sx={{
           width: 400,
           bgcolor: "background.paper",
@@ -60,7 +61,7 @@ export const CreateBotModal = ({
       >
         <IconButton
           onClick={onClose}
-          sx={{ position: "absolute", top: 8, right: 8 }}
+          sx={{position: "absolute", top: 8, right: 8}}
         >
           <CloseIcon />
         </IconButton>
@@ -81,10 +82,15 @@ export const CreateBotModal = ({
             {...register("name")}
             error={!!errors.name}
             helperText={errors.name?.message}
-            sx={{ mb: 2 }}
+            sx={{mb: 2}}
           />
 
-          <Button type="submit" variant="contained" fullWidth>
+          <Button
+            data-testid="test-createBotModalButton"
+            type="submit"
+            variant="contained"
+            fullWidth
+          >
             Create Bot
           </Button>
         </form>

@@ -1,16 +1,16 @@
-import { BotCard } from "@/components/bot-card/bot-card"
-import { CreateBotModal } from "@/components/modals/create-bot-modal"
+import {BotCard} from "@/components/bot-card/bot-card"
+import {CreateBotModal} from "@/components/modals/create-bot-modal"
 import {
   useCreateBotMutation,
   useDeleteBotMutation,
   useGetBotsQuery,
   usePrefetch
 } from "@/store/slices/bookkeeping/bookkeeping"
-import { Box, Button, Grid2 as Grid, Stack, Typography } from "@mui/material"
-import { useState } from "react"
+import {Box, Button, Grid2 as Grid, Stack, Typography} from "@mui/material"
+import {useState} from "react"
 
 const Dashboard = () => {
-  const { data } = useGetBotsQuery()
+  const {data} = useGetBotsQuery()
   const [isModalOpen, setIsModalOpen] = useState(false)
   const prefetch = usePrefetch("getBotById")
 
@@ -21,7 +21,7 @@ const Dashboard = () => {
 
   const handleCreate = async (name: string) => {
     try {
-      await createBot({ name }).unwrap()
+      await createBot({name}).unwrap()
       setMessage("Bot successfully created!")
     } catch {
       setMessage("Failed to create bot.")
@@ -38,12 +38,14 @@ const Dashboard = () => {
   }
   const botsLength = (data || []).length
 
-  console.log(data)
   return (
     <>
-      {" "}
-      <Stack width="100%" display={{ sm: "flex" }}>
-        <Button sx={{ width: [200, 300] }} onClick={() => setIsModalOpen(true)}>
+      <Stack width="100%" display={{sm: "flex"}}>
+        <Button
+          data-testid="test-createBotButton"
+          sx={{width: [200, 300]}}
+          onClick={() => setIsModalOpen(true)}
+        >
           <Typography>Create your automation bot</Typography>
         </Button>
 
@@ -54,7 +56,7 @@ const Dashboard = () => {
 
           {botsLength > 0 ? (
             (data || []).map((bot) => (
-              <Grid key={bot._id} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+              <Grid key={bot._id} size={{xs: 12, sm: 6, md: 4, lg: 3}}>
                 <Box onMouseOver={() => bot._id && prefetch(bot._id)}>
                   <BotCard bot={bot} onDelete={(_id) => _handleDelete(_id)} />
                 </Box>

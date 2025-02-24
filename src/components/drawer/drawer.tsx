@@ -1,4 +1,4 @@
-import { ROUTE_NAMES } from "@/utils/router"
+import {ROUTE_NAMES} from "@/utils/router"
 import {
   AppBar,
   Box,
@@ -13,15 +13,15 @@ import {
   Toolbar,
   Typography
 } from "@mui/material"
-import { dark } from "@mui/material/styles/createPalette"
-import React, { useState } from "react"
-import { Link } from "react-router"
+import {dark} from "@mui/material/styles/createPalette"
+import React, {useState} from "react"
+import {Link} from "react-router"
 
 const drawerWidth = 240
 
-type NavigationProps = React.PropsWithChildren<object>
+type CustomDrawerProps = React.PropsWithChildren<object>
 
-const Navigation = ({ children }: NavigationProps) => {
+const CustomDrawer = ({children}: CustomDrawerProps) => {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [isClosing, setIsClosing] = useState(false)
 
@@ -67,13 +67,13 @@ const Navigation = ({ children }: NavigationProps) => {
   const container = window.document.body
 
   return (
-    <Box sx={{ display: "flex", width: "100%" }}>
+    <Box sx={{display: "flex", width: "100%"}}>
       <CssBaseline />
       <AppBar
         position="fixed"
         sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` }
+          width: {sm: `calc(100% - ${drawerWidth}px)`},
+          ml: {sm: `${drawerWidth}px`}
         }}
       >
         <Toolbar>
@@ -82,17 +82,14 @@ const Navigation = ({ children }: NavigationProps) => {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{mr: 2, display: {sm: "none"}}}
           ></IconButton>
           <Typography variant="h6" noWrap component="div">
             BookKeeping
           </Typography>
         </Toolbar>
       </AppBar>
-      <Box
-        component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-      >
+      <Box component="nav" sx={{width: {sm: drawerWidth}, flexShrink: {sm: 0}}}>
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer
           container={container}
@@ -104,7 +101,7 @@ const Navigation = ({ children }: NavigationProps) => {
             keepMounted: true // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: "block", sm: "none" },
+            display: {xs: "block", sm: "none"},
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth
@@ -116,7 +113,7 @@ const Navigation = ({ children }: NavigationProps) => {
         <Drawer
           variant="permanent"
           sx={{
-            display: { xs: "none", sm: "block" },
+            display: {xs: "none", sm: "block"},
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth
@@ -132,7 +129,7 @@ const Navigation = ({ children }: NavigationProps) => {
         sx={{
           flexGrow: 1,
           p: 3,
-          width: { sm: `calc(100% - ${drawerWidth}px)` }
+          width: {sm: `calc(100% - ${drawerWidth}px)`}
         }}
       >
         <Toolbar />
@@ -142,4 +139,4 @@ const Navigation = ({ children }: NavigationProps) => {
   )
 }
 
-export default Navigation
+export default CustomDrawer

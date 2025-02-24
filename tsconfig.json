@@ -39,6 +39,5 @@
   "include": [
     "src",
     "jest.setup.ts",
-    "eslint.config.ts"
   ]
 }

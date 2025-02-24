@@ -1,6 +1,6 @@
-import { Bot } from "@/store/slices/bookkeeping/types"
-import { Paper, Typography, Button } from "@mui/material"
-import { useNavigate } from "react-router"
+import {Bot} from "@/store/slices/bookkeeping/types"
+import {Paper, Typography, Button} from "@mui/material"
+import {useNavigate} from "react-router"
 
 export const BotCard = ({
   bot,
@@ -9,7 +9,7 @@ export const BotCard = ({
   bot: Bot
   onDelete: (id: string) => void
 }) => {
-  const { _id, name, tasks } = bot
+  const {_id, name, tasks} = bot
   const navigate = useNavigate()
 
   return (
@@ -41,6 +41,7 @@ export const BotCard = ({
       </Typography>
 
       <Button
+        data-testid="test-deleteBotButton"
         variant="outlined"
         color="error"
         onClick={(e) => {
