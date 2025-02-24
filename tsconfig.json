@@ -25,6 +25,11 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
+    "types": [
+      "node",
+      "jest",
+      "@testing-library/jest-dom"
+    ],
     "paths": {
       "@/*": [
         "./src/*"
@@ -33,5 +38,7 @@
   },
   "include": [
     "src",
+    "jest.setup.ts",
+    "eslint.config.ts"
   ]
 }

@@ -17,7 +17,7 @@ const Dashboard = () => {
   const [createBot] = useCreateBotMutation()
   const [deleteBot] = useDeleteBotMutation()
 
-  const [, setMessage] = useState<string | null>(null)
+  const [_message, setMessage] = useState<string | null>(null)
 
   const handleCreate = async (name: string) => {
     try {
