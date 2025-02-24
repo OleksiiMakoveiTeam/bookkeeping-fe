@@ -1,7 +1,7 @@
-import Navigation from "@/components/navigation/navigation"
-import { Container } from "@mui/material"
+import CustomDrawer from "@/components/drawer/drawer"
+import {Container} from "@mui/material"
 
-export const NavLayout = ({ children }: { children: React.ReactNode }) => {
+export const NavLayout = ({children}: {children: React.ReactNode}) => {
   return (
     <Container
       maxWidth="lg"
@@ -13,7 +13,7 @@ export const NavLayout = ({ children }: { children: React.ReactNode }) => {
         mb: [5, 10]
       }}
     >
-      <Navigation>{children}</Navigation>
+      <CustomDrawer>{children}</CustomDrawer>
     </Container>
   )
 }

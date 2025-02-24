@@ -3,5 +3,5 @@ module.exports = {
   arrowParens: "always",
   semi: false,
   singleQuote: false,
-  bracketSpacing: true
+  bracketSpacing: false
 }

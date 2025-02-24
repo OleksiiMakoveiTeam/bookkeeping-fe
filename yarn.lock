@@ -1954,7 +1954,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:8.24.1":
+"@typescript-eslint/eslint-plugin@npm:8.24.1, @typescript-eslint/eslint-plugin@npm:^8.24.1":
   version: 8.24.1
   resolution: "@typescript-eslint/eslint-plugin@npm:8.24.1"
   dependencies:
@@ -1975,7 +1975,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:8.24.1":
+"@typescript-eslint/parser@npm:8.24.1, @typescript-eslint/parser@npm:^8.24.1":
   version: 8.24.1
   resolution: "@typescript-eslint/parser@npm:8.24.1"
   dependencies:
@@ -2391,6 +2391,8 @@ __metadata:
     "@types/jest": ^29.5.14
     "@types/react": ^19.0.8
     "@types/react-dom": ^19.0.3
+    "@typescript-eslint/eslint-plugin": ^8.24.1
+    "@typescript-eslint/parser": ^8.24.1
     "@vitejs/plugin-react": ^4.3.4
     date-fns: ^4.1.0
     eslint: ^9.19.0
